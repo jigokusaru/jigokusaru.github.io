@@ -1,6 +1,6 @@
-import clientPromise from '../../../util/mongodb';
+import clientPromise from '../../../../util/mongodb';
 
-export async function GET(req) {
+export async function GET() {
     const client = await clientPromise;
     const db = client.db('biddibot');
     const tournaments = await db.collection('tournaments').find({}).toArray();
